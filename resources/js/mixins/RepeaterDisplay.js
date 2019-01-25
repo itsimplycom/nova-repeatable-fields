@@ -39,7 +39,8 @@ export default {
                         : row[key];
                     return {
                         label: subField.label,
-                        value: value
+                        value: value,
+                        format: subField.format
                     }
                 });
             })
