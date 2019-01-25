@@ -1,6 +1,6 @@
 <?php
 
-namespace Fourstacks\NovaRepeatableFields;
+namespace Its\NovaRepeatableFields;
 
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -86,19 +86,22 @@ class Repeater extends Field
         $allowedKeys = ['label', 'name', 'placeholder', 'type', 'width', 'options'];
         $config = array_intersect_key($fieldConfig, array_flip($allowedKeys));
 
-        if(! isset($config['name'])){
+        if (!isset($config['name'])) {
             $config['name'] = str_slug($config['label'], '_');
         }
-        if(! isset($config['placeholder'])){
+        if (!isset($config['placeholder'])) {
             $config['placeholder'] = $config['label'];
         }
-        if(! isset($config['type'])){
+        if (!isset($config['type'])) {
             $config['type'] = 'text';
         }
-        if(! isset($config['width'])){
+        if (!isset($config['format'])) {
+            $config['format'] = null;
+        }
+        if (!isset($config['width'])) {
             $config['width'] = null;
         }
-        if(! isset($config['options'])){
+        if (!isset($config['options'])) {
             $config['options'] = [];
         }
 

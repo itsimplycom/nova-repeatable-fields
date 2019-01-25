@@ -7,9 +7,9 @@
             </svg>
         </div>
         <button
-            class="row-delete"
-            type="button"
-            @click="deleteRow">
+                class="row-delete"
+                type="button"
+                @click="deleteRow">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28">
                 <title>close</title>
                 <path d="M20.281 20.656c0 0.391-0.156 0.781-0.438 1.062l-2.125 2.125c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-4.594-4.594-4.594 4.594c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-2.125-2.125c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l4.594-4.594-4.594-4.594c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l2.125-2.125c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l4.594 4.594 4.594-4.594c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l2.125 2.125c0.281 0.281 0.438 0.672 0.438 1.062s-0.156 0.781-0.438 1.062l-4.594 4.594 4.594 4.594c0.281 0.281 0.438 0.672 0.438 1.062z"></path>
@@ -17,13 +17,13 @@
         </button>
         <div class="row-inputs" :class="formLayout">
             <component
-                v-for="(subField, index) in field.sub_fields"
-                :is="`${subField.type}-sub-field`"
-                :key="index"
-                :sub-field="subField"
-                v-model="value[subField.name]"
-                class="row-input"
-                :class="getInputLayout(subField)"
+                    v-for="(subField, index) in field.sub_fields"
+                    :is="`${subField.type}-sub-field`"
+                    :key="index"
+                    :sub-field="subField"
+                    v-model="value[subField.name]"
+                    class="row-input"
+                    :class="getInputLayout(subField)"
             ></component>
         </div>
     </div>
@@ -31,6 +31,7 @@
 
 <script>
     import TextSubField from '../sub-fields/TextSubField.vue';
+    import TextareaSubField from '../sub-fields/TextareaSubField.vue';
     import EmailSubField from '../sub-fields/EmailSubField.vue';
     import NumberSubField from '../sub-fields/NumberSubField.vue';
     import SelectSubField from '../sub-fields/SelectSubField.vue';
@@ -39,26 +40,27 @@
 
         components: {
             TextSubField,
+            TextareaSubField,
             EmailSubField,
             NumberSubField,
-            SelectSubField
+            SelectSubField,
         },
 
         props: ['value', 'field', 'index'],
 
-        computed:{
-            formLayout(){
+        computed: {
+            formLayout() {
                 return (this.field.display_stacked)
                     ? '-vertical'
                     : '-horizontal';
             }
         },
 
-        methods:{
-            deleteRow(){
+        methods: {
+            deleteRow() {
                 this.$emit('delete-row', this.index);
             },
-            getInputLayout(subField){
+            getInputLayout(subField) {
 
                 let width = (subField.width)
                     ? subField.width

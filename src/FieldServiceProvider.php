@@ -1,6 +1,6 @@
 <?php
 
-namespace Fourstacks\NovaRepeatableFields;
+namespace Its\NovaRepeatableFields;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;

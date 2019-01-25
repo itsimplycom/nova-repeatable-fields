@@ -1,13 +1,13 @@
 <template>
     <panel-item :field="field">
         <div slot="value">
-            <p class="mb-4"><strong v-text="summaryText"></strong></p>
+            <p class="mb-4"><span v-text="summaryText"></span></p>
             <ul v-show="detailVisible" class="list-reset">
                 <li v-for="row in rows">
                     <ul class="list-reset mb-4">
                         <li class="flex items-top mb-1" v-for="subRow in row">
                             <span class="block w-1/6 mr-2">{{ subRow.label }}:</span>
-                            <span class="block"><strong>{{ subRow.value }}</strong></span>
+                            <span class="block">{{ subRow.value }}</span>
                         </li>
                     </ul>
                 </li>

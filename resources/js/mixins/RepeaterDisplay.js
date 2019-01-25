@@ -1,4 +1,4 @@
-export default{
+export default {
 
     data: () => ({
         detailVisible: false,
@@ -12,8 +12,8 @@ export default{
         },
         toggleText() {
             return (this.detailVisible)
-                ? 'Hide detail'
-                : 'Show detail'
+                ? 'Nascondi dettagli'
+                : 'Mostra dettagli'
         },
         summaryText() {
             return `${this.summaryTextNumber} ${this.summaryTextLabel}`;
@@ -26,7 +26,7 @@ export default{
         summaryTextLabel() {
             return (this.field.summary_label)
                 ? this.field.summary_label
-                : 'rows';
+                : 'servizi';
         },
         rows() {
             return this.value.map(row => {
