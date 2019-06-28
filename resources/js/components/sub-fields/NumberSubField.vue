@@ -2,6 +2,7 @@
     <div>
         <input :id="subField.name"
                :name="subField.name"
+               onwheel="this.blur()"
                type="number"
                step="0.01"
                min="0"
@@ -16,8 +17,6 @@
 </template>
 
 <script>
-
-
     export default {
 
         props: [
@@ -25,4 +24,17 @@
             'value'
         ]
     }
+
 </script>
+
+<style scoped>
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+</style>
