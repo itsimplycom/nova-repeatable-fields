@@ -1,6 +1,5 @@
 <template>
     <div>
-        <small><code>&lt;br&gt; Per andare a capo singolo</code></small>
         <textarea
                 class="w-full shadow-inner p-4 border-0"
                 :id="subField.name"
