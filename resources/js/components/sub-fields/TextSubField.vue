@@ -1,7 +1,9 @@
 <template>
     <div>
-        <textarea
-                class="w-full shadow-inner p-4 border-0"
+        <small><code>Inserire "SI" per andare a capo / lasciare vuoto altrimenti</code></small>
+        <input
+                class="w-full form-control form-input form-input-bordered"
+                type="text"
                 :id="subField.name"
                 :name="subField.name"
                 :value="value"
@@ -10,7 +12,6 @@
 
         >
 
-        </textarea>
     </div>
 
 </template>

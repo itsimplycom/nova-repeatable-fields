@@ -17299,6 +17299,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -17315,9 +17316,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("textarea", {
-      staticClass: "w-full shadow-inner p-4 border-0",
+    _vm._m(0),
+    _vm._v(" "),
+    _c("input", {
+      staticClass: "w-full form-control form-input form-input-bordered",
       attrs: {
+        type: "text",
         id: _vm.subField.name,
         name: _vm.subField.name,
         placeholder: _vm.subField.placeholder
@@ -17331,7 +17335,18 @@ var render = function() {
     })
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("small", [
+      _c("code", [
+        _vm._v('Inserire "SI" per andare a capo / lasciare vuoto altrimenti')
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
